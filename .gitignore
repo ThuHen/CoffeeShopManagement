@@ -1,0 +1,35 @@
+﻿# Ẩn thư mục build, debug, release
+bin/
+obj/
+*.exe
+*.dll
+*.pdb
+
+# Ẩn file cấu hình user của Visual Studio
+*.user
+*.suo
+*.vsp
+*.vspx
+*.vspscc
+*.vssscc
+*.cache
+*.ncb
+*.sdf
+*.sqlite
+*.sql
+
+# Ẩn thư mục Visual Studio tự tạo
+.vscode/
+.vs/
+.idea/
+
+# Ẩn file log, backup
+*.log
+*.bak
+
+# Ẩn file settings của Resharper hoặc Rider (nếu có)
+*.DotSettings.user
+
+# Ẩn file lock của NuGet
+packages/
+project.lock.json
