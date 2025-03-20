@@ -3,12 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.13.35818.85
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeShop", "CoffeeShop\CoffeeShop.csproj", "{EBA1D7D7-13A8-4390-94DD-C6B924D099CD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PresentationLayer", "CoffeeShop\PresentationLayer.csproj", "{EBA1D7D7-13A8-4390-94DD-C6B924D099CD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BussinessLayer", "BussinessLayer\BussinessLayer.csproj", "{D58B439E-AD55-498F-AC2B-D164091D5D25}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLayer", "DataLayer\DataLayer.csproj", "{24F9ABC4-5F4F-43CA-9ED1-EBD4C8EEA2F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransferObject", "TransferObject\TransferObject.csproj", "{25059E90-CC6A-446E-BC3D-3A4A1A260368}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,6 +26,18 @@ Global
 		{EBA1D7D7-13A8-4390-94DD-C6B924D099CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EBA1D7D7-13A8-4390-94DD-C6B924D099CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EBA1D7D7-13A8-4390-94DD-C6B924D099CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D58B439E-AD55-498F-AC2B-D164091D5D25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D58B439E-AD55-498F-AC2B-D164091D5D25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D58B439E-AD55-498F-AC2B-D164091D5D25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D58B439E-AD55-498F-AC2B-D164091D5D25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24F9ABC4-5F4F-43CA-9ED1-EBD4C8EEA2F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24F9ABC4-5F4F-43CA-9ED1-EBD4C8EEA2F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24F9ABC4-5F4F-43CA-9ED1-EBD4C8EEA2F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24F9ABC4-5F4F-43CA-9ED1-EBD4C8EEA2F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25059E90-CC6A-446E-BC3D-3A4A1A260368}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25059E90-CC6A-446E-BC3D-3A4A1A260368}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25059E90-CC6A-446E-BC3D-3A4A1A260368}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25059E90-CC6A-446E-BC3D-3A4A1A260368}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
+
 namespace CoffeeShop
 {
     public partial class Login: Form
@@ -19,14 +20,16 @@ namespace CoffeeShop
         public Login()
         {
             InitializeComponent();
+   
         }
         private bool ValidateLogin(string username, string password)
         {
             dataProvider = new DataProvider();
+            conn = dataProvider.GetConnection();
             dataProvider.Connect();
             //string query = "SELECT COUNT(username) FROM Users WHERE username = '" + username + "' AND password = '" + password + "'";
             string query = "SELECT COUNT(username) FROM Users WHERE username = @username AND password = @password";
-            cmd = new SqlCommand(query, dataProvider.GetConnection());
+            cmd = new SqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@username", username);
             cmd.Parameters.AddWithValue("@password", password);
             int count = (int)cmd.ExecuteScalar();
@@ -36,6 +39,7 @@ namespace CoffeeShop
         {
             string username = txtUsername.Text;
             string password = txtPassword.Text;
+            //Account account = new Account(username, password);
             if (ValidateLogin(username, password))
             {
                 this.DialogResult = DialogResult.OK;

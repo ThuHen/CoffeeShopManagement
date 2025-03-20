@@ -21,6 +21,8 @@ namespace CoffeeShop
         {
             this.Show();
             this.Enabled = false;
+            Supplier supplier = new Supplier();
+            supplier.ShowDialog();
             Login login = new Login();
             DialogResult result = login.ShowDialog();
             if (result == DialogResult.OK)
