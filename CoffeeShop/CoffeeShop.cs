@@ -46,7 +46,7 @@ namespace CoffeeShop
         }
         private void btnSupplier_Click(object sender, EventArgs e)
         {
-            AddForm(new Supplier());
+            AddForm(new SupplierFolder.Supplier());
         }
     }
 }

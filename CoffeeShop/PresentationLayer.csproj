@@ -60,10 +60,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Supplier.cs">
+    <Compile Include="SupplierFolder\Supplier.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Supplier.Designer.cs">
+    <Compile Include="SupplierFolder\Supplier.Designer.cs">
       <DependentUpon>Supplier.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="CoffeeShop.resx">
@@ -81,7 +81,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Supplier.resx">
+    <EmbeddedResource Include="SupplierFolder\Supplier.resx">
       <DependentUpon>Supplier.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
@@ -107,5 +107,6 @@
       <Name>TransferObject</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

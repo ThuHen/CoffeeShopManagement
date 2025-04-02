@@ -5,7 +5,7 @@ using System.Windows.Forms;
 using BussinessLayer;
 using TransferObject;
 
-namespace CoffeeShop
+namespace CoffeeShop.SupplierFolder
 {
     public partial class Supplier : Form
     {
