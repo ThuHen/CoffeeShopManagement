@@ -40,8 +40,8 @@ namespace CoffeeShop
             form.TopLevel = false;
             panelCenter.Controls.Clear();
             panelCenter.Controls.Add(form);
-            //form.Dock = DockStyle.Fill;
-            //form.FormBorderStyle = FormBorderStyle.None;
+            form.Dock = DockStyle.Fill;
+            form.FormBorderStyle = FormBorderStyle.None;
             form.Show();
         }
         private void btnSupplier_Click(object sender, EventArgs e)

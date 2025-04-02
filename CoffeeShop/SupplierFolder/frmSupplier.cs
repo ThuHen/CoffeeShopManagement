@@ -1,15 +1,19 @@
-﻿using System;
+﻿using BussinessLayer;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
-using BussinessLayer;
-using TransferObject;
 
-namespace CoffeeShop
+namespace CoffeeShop.SupplierFolder
 {
-    public partial class Supplier : Form
+    public partial class frmSupplier: Form
     {
-        public Supplier()
+        public frmSupplier()
         {
             InitializeComponent();
         }
@@ -19,19 +23,9 @@ namespace CoffeeShop
         }
         private void Supplier_Load(object sender, EventArgs e)
         {
-            AdjustColumnWidths();
             LoadData();
         }
-        private void AdjustColumnWidths()
-        {
-            // Tổng chiều rộng của DataGridView
-            int totalWidth = dataGV.ClientSize.Width;
 
-            // Đặt chiều rộng cột theo phần trăm
-            dataGV.Columns[0].Width = (int)(totalWidth * 0.2); // 20%
-            dataGV.Columns[1].Width = (int)(totalWidth * 0.3); // 30%
-            dataGV.Columns[2].Width = (int)(totalWidth * 0.5); // 50%
-        }
 
 
         //private void btnSave_Click(object sender, EventArgs e)
