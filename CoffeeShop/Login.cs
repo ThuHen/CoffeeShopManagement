@@ -8,39 +8,42 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using TransferObject;
+using BussinessLayer;
 
 
 namespace CoffeeShop
 {
     public partial class Login: Form
     {
-        private SqlConnection conn;
-        private DataProvider dataProvider;
-        private SqlCommand cmd;
+        
+        private LoginBL loginBL;
+
         public Login()
         {
             InitializeComponent();
+            loginBL = new LoginBL();
    
         }
-        private bool ValidateLogin(string username, string password)
+        private bool ValidateLogin(Account account)
         {
-            dataProvider = new DataProvider();
-            conn = dataProvider.GetConnection();
-            dataProvider.Connect();
-            //string query = "SELECT COUNT(username) FROM Users WHERE username = '" + username + "' AND password = '" + password + "'";
-            string query = "SELECT COUNT(username) FROM Users WHERE username = @username AND password = @password";
-            cmd = new SqlCommand(query, conn);
-            cmd.Parameters.AddWithValue("@username", username);
-            cmd.Parameters.AddWithValue("@password", password);
-            int count = (int)cmd.ExecuteScalar();
-            return count > 0;
+            try
+            {
+                return loginBL.Login(account);
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+            
         }
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string username = txtUsername.Text;
+            string username = txtUsername.Text.Trim();
             string password = txtPassword.Text;
-            //Account account = new Account(username, password);
-            if (ValidateLogin(username, password))
+            Account account = new Account(username, password);
+            if (ValidateLogin(account))
             {
                 this.DialogResult = DialogResult.OK;
                 this.Close();
