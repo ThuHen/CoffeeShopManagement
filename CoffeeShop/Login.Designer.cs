@@ -1,4 +1,4 @@
-﻿namespace CoffeeShop
+﻿namespace PresentationLayer
 {
     partial class Login
     {
@@ -49,7 +49,7 @@
             // txtUsername
             // 
             this.txtUsername.Location = new System.Drawing.Point(118, 36);
-            this.txtUsername.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(2);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(144, 20);
             this.txtUsername.TabIndex = 0;
@@ -58,8 +58,9 @@
             // txtPassword
             // 
             this.txtPassword.Location = new System.Drawing.Point(118, 74);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(144, 20);
             this.txtPassword.TabIndex = 1;
             this.txtPassword.Text = "123";
@@ -78,7 +79,7 @@
             // 
             this.btnLogin.AutoSize = true;
             this.btnLogin.Location = new System.Drawing.Point(118, 110);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(56, 23);
             this.btnLogin.TabIndex = 4;
@@ -90,7 +91,7 @@
             // 
             this.btnExit.AutoSize = true;
             this.btnExit.Location = new System.Drawing.Point(205, 110);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(2);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(56, 23);
             this.btnExit.TabIndex = 3;
@@ -109,7 +110,7 @@
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.lblUsername);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";

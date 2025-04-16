@@ -83,6 +83,32 @@ namespace DataLayer
                 throw ex;
             }
         }
+        public int MyExcuteNonQuery(string sql, CommandType type, List<SqlParameter> parameters = null)
+        {
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            cmd.CommandType = type;
+            if (parameters != null)
+            {
+                foreach (SqlParameter parameter in parameters)
+                {
+                    cmd.Parameters.Add(parameter);
+                }
+            }
+            try
+            {
+                Connect();
+                return cmd.ExecuteNonQuery();
+            }
+            catch (SqlException ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                Disconnect();
+            }
+        }
 
     }
 }

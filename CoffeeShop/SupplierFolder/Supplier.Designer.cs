@@ -1,4 +1,4 @@
-﻿namespace CoffeeShop.SupplierFolder
+﻿namespace PresentationLayer.SupplierFolder
 {
     partial class Supplier
     {
@@ -29,10 +29,7 @@
         private void InitializeComponent()
         {
             this.dataGV = new System.Windows.Forms.DataGridView();
-            this.MaNCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnSave = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.panelBottom = new System.Windows.Forms.Panel();
             this.panelTop = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -45,58 +42,36 @@
             // 
             // dataGV
             // 
+            this.dataGV.AllowUserToAddRows = false;
+            this.dataGV.AllowUserToDeleteRows = false;
+            this.dataGV.AllowUserToOrderColumns = true;
             this.dataGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MaNCC,
-            this.Ten,
-            this.DiaChi});
             this.dataGV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGV.Location = new System.Drawing.Point(0, 0);
+            this.dataGV.MultiSelect = false;
             this.dataGV.Name = "dataGV";
             this.dataGV.RowHeadersWidth = 51;
             this.dataGV.RowTemplate.Height = 24;
+            this.dataGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dataGV.Size = new System.Drawing.Size(916, 299);
             this.dataGV.TabIndex = 0;
+            this.dataGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGV_CellContentClick);
             // 
-            // MaNCC
+            // btnAdd
             // 
-            this.MaNCC.DataPropertyName = "id";
-            this.MaNCC.HeaderText = "Mã nhà cung cấp";
-            this.MaNCC.MinimumWidth = 6;
-            this.MaNCC.Name = "MaNCC";
-            this.MaNCC.ReadOnly = true;
-            this.MaNCC.Width = 150;
-            // 
-            // Ten
-            // 
-            this.Ten.DataPropertyName = "name";
-            this.Ten.HeaderText = "Tên nhà cung cấp";
-            this.Ten.MinimumWidth = 6;
-            this.Ten.Name = "Ten";
-            this.Ten.Width = 150;
-            // 
-            // DiaChi
-            // 
-            this.DiaChi.DataPropertyName = "address";
-            this.DiaChi.HeaderText = "Địa chỉ";
-            this.DiaChi.MinimumWidth = 6;
-            this.DiaChi.Name = "DiaChi";
-            this.DiaChi.Width = 350;
-            // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnSave.Location = new System.Drawing.Point(52, 30);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(138, 78);
-            this.btnSave.TabIndex = 1;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnAdd.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnAdd.Location = new System.Drawing.Point(52, 30);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(138, 78);
+            this.btnAdd.TabIndex = 1;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // panelBottom
             // 
             this.panelBottom.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.panelBottom.Controls.Add(this.btnSave);
+            this.panelBottom.Controls.Add(this.btnAdd);
             this.panelBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelBottom.Location = new System.Drawing.Point(0, 453);
             this.panelBottom.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -123,7 +98,7 @@
             this.label1.Location = new System.Drawing.Point(52, 46);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(202, 42);
+            this.label1.Size = new System.Drawing.Size(157, 33);
             this.label1.TabIndex = 0;
             this.label1.Text = "SUPPLIER";
             // 
@@ -140,7 +115,7 @@
             // 
             // Supplier
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(916, 607);
             this.Controls.Add(this.panelCenter);
@@ -162,10 +137,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGV;
-        private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaNCC;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Ten;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DiaChi;
+        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Panel panelBottom;
         private System.Windows.Forms.Panel panelTop;
         private System.Windows.Forms.Panel panelCenter;

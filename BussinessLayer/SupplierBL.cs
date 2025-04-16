@@ -28,5 +28,27 @@ namespace BussinessLayer
                 throw ex;
             }
         }
+        public int Add(Supplier supplier)
+        {
+            try
+            {
+                return supplierDL.Add(supplier);
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+        }
+        public void Del(string  id)
+        {
+            try
+            {
+                supplierDL.Del(id);
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

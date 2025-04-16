@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using TransferObject;
 using System.Data;
 
+
 namespace DataLayer
 {
     public class SupplierDL:DataProvider
@@ -40,5 +41,50 @@ namespace DataLayer
                 Disconnect();
             }
         }
+        //public int Add(Supplier supplier)
+        //{
+        //    string sql = "INSERT INTO Supplier(id, name, address) VALUES('" + supplier.Id + "', '" + supplier.Name + "', '" + supplier.Address + "')";
+        //    try
+        //    {
+        //        return MyExcuteNonQuery(sql, CommandType.Text);
+        //    }
+        //    catch (SqlException ex)
+        //    {
+
+        //        throw ex;
+        //    }
+        //}
+
+        public int Add(Supplier supplier)
+        {
+            string sql = "uspAddSupplier";
+            List<SqlParameter> parameters = new List<SqlParameter>();
+            parameters.Add(new SqlParameter("@id", supplier.Id));
+            parameters.Add(new SqlParameter("@name", supplier.Name));
+            parameters.Add(new SqlParameter("@address", supplier.Address));
+            try
+            {
+                return MyExcuteNonQuery(sql, CommandType.StoredProcedure, parameters);
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+        }
+        public void Del(string id)
+        {
+            string sql = "uspDelSupplier";
+            List<SqlParameter> parameters = new List<SqlParameter>();
+            parameters.Add(new SqlParameter("@id", id));
+            try
+            {
+                MyExcuteNonQuery(sql, CommandType.StoredProcedure, parameters);
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+        }
+
     }
 }
